@@ -1,7 +1,7 @@
 # PSkill Whitepaper
 
 **Also known as: Executable Skill Document Specification**  
-**Whitepaper version: 0.3.0-draft**
+**Whitepaper version: 0.4.0-draft**
 
 ---
 
@@ -45,7 +45,7 @@ PSkill uses fail-closed behavior, not best effort. Any condition that cannot be 
 
 The standard released distribution format is `7z`, for example `ImageOCR.pskill.7z`. Split 7z archives are allowed, but all required volumes must be present before execution. A missing volume MUST result in `PSkill Load Failed`; partial execution is prohibited.
 
-For a PSkill under active, high-velocity development, the package MAY instead be distributed and executed as its unpacked root directory. The directory MUST preserve the package layout and contain `main.pskill.html` at its root. This form exists so that individual PSkill files can be version-controlled alongside the engineering project; the runtime MUST validate it as the same package content and MUST NOT require an intermediate 7z archive or unpacking step. A released package MAY still be assembled from that directory into a 7z archive.
+For a PSkill under active, high-velocity development, the package MAY instead be distributed and executed as its unpacked root directory. The directory MUST preserve the package layout and contain `main.pskill.html` at its root. This form exists so that individual PSkill files can be version-controlled alongside the engineering project; the runtime MUST apply the same layout, entry-point, dependency, resource, and integrity validation that it applies to the extracted contents of a 7z package, and MUST NOT require an intermediate archive or unpacking step. A released package MAY still be assembled from that directory into a 7z archive.
 
 # 5. Recommended package layout
 
@@ -75,11 +75,11 @@ Every released package SHOULD include `ReadMe.md` for human developers and distr
 
 # 8. PSkill header
 
-The document MUST begin with the PSkill name, followed by metadata badges or equivalent text. Typical data includes `PSkill`, a package version, `Spec 0.3`, license, offline status, and supported platforms. Badges may be text, SVG, or local images.
+The document MUST begin with the PSkill name, followed by metadata badges or equivalent text. Typical data includes `PSkill`, a package version, `Spec 0.4`, license, offline status, and supported platforms. Badges may be text, SVG, or local images.
 
 # 9. Metadata
 
-Metadata MUST declare the PSkill name, a Semantic Versioning package version (`MAJOR.MINOR.PATCH`), and the PSkill specification version (`PSkill Specification: 0.3.0`). It SHOULD declare a license. Non-standard licenses must be included in the package or linked unambiguously.
+Metadata MUST declare the PSkill name, a Semantic Versioning package version (`MAJOR.MINOR.PATCH`), and the PSkill specification version (`PSkill Specification: 0.4.0`). It SHOULD declare a license. Non-standard licenses must be included in the package or linked unambiguously.
 
 # 10. Input contract
 
@@ -327,7 +327,7 @@ Where possible, PSkills SHOULD be idempotent. File generation, database work, de
 ```html
 <!DOCTYPE html><html><head><meta charset="utf-8"><title>Example PSkill</title></head>
 <body><h1>Example PSkill</h1>
-<p>PSkill | Version 1.0.0 | Specification 0.3.0 | MIT License</p>
+<p>PSkill | Version 1.0.0 | Specification 0.4.0 | MIT License</p>
 <h2>Inputs</h2><h2>Environment</h2><h2>Outputs</h2><h2>Execution</h2>
 <p>TRY: invoke the declared tool. IF SUCCESS: continue. IF FAILURE: terminate.</p>
 <h2>Failure Policy</h2><p>Any unhandled condition terminates execution.</p>
@@ -392,5 +392,5 @@ PSkill aims to become a distribution form between document, program, workflow, A
 
 > **PSkill is an executable Skill package whose main program logic is structured natural language carried in HTML, distributed as a 7z archive or, during active development, as a version-controlled directory, able to carry versioned tools and resources, and strictly interpreted by AI.**
 
-**PSkill Whitepaper 0.3.0-draft**  
+**PSkill Whitepaper 0.4.0-draft**  
 **Status: Draft / Request for Comment**

@@ -2,7 +2,7 @@
 
 **又称：可执行 Skill 文档规范（Executable Skill Document Specification）**
 
-**白皮书版本：0.3.0-draft**
+**白皮书版本：0.4.0-draft**
 
 ---
 
@@ -235,7 +235,7 @@ PSkill Load Failed
 
 不得尝试部分执行。
 
-对于处于高速开发阶段的工程，PSkill 数据包允许以未压缩的根目录形式存在、分发和执行。该目录必须保留 PSkill 数据包的目录结构，并在根目录包含 `main.pskill.html`。此形式用于让 PSkill 的各个文件能与工程一同进行版本管理；Runtime 必须将其作为同一数据包内容进行验证，不得要求先生成 7z 压缩包或执行解压步骤。正式发布时，仍可由该目录构建为 7z 数据包。
+对于处于高速开发阶段的工程，PSkill 数据包允许以未压缩的根目录形式存在、分发和执行。该目录必须保留 PSkill 数据包的目录结构，并在根目录包含 `main.pskill.html`。此形式用于让 PSkill 的各个文件能与工程一同进行版本管理；Runtime 必须按对 7z 数据包解压后内容相同的目录结构、入口点、依赖、资源和完整性规则进行验证，不得要求先生成中间压缩包或执行解压步骤。正式发布时，仍可由该目录构建为 7z 数据包。
 
 ---
 
@@ -417,7 +417,7 @@ PSkill 的 HTML 结构应优先考虑：
 ```text
 PSkill
 Version 1.4.2
-Spec 0.3
+Spec 0.4
 MIT
 Offline
 Windows x64 / Linux x64
@@ -470,7 +470,7 @@ MAJOR.MINOR.PATCH
 例如：
 
 ```text
-PSkill Specification: 0.3.0
+PSkill Specification: 0.4.0
 ```
 
 或者提供对应规范链接。
@@ -2001,7 +2001,7 @@ PSkill 应遵守 Semantic Versioning：
 <p>
 PSkill |
 Version 1.0.0 |
-Specification 0.3.0 |
+Specification 0.4.0 |
 MIT License
 </p>
 
@@ -2563,6 +2563,6 @@ PSkill 应优先由 AI 协助结构化编写和审阅；设计者必须对发布
 
 ---
 
-**PSkill Whitepaper 0.3.0-draft**
+**PSkill Whitepaper 0.4.0-draft**
 
 **Status: Draft / Request for Comment**
