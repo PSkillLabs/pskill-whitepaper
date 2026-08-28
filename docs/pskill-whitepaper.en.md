@@ -43,7 +43,9 @@ PSkill uses fail-closed behavior, not best effort. Any condition that cannot be 
 
 # 4. PSkill package
 
-The standard distribution format is `7z`, for example `ImageOCR.pskill.7z`. Split 7z archives are allowed, but all required volumes must be present before execution. A missing volume MUST result in `PSkill Load Failed`; partial execution is prohibited.
+The standard released distribution format is `7z`, for example `ImageOCR.pskill.7z`. Split 7z archives are allowed, but all required volumes must be present before execution. A missing volume MUST result in `PSkill Load Failed`; partial execution is prohibited.
+
+For a PSkill under active, high-velocity development, the package MAY instead be distributed and executed as its unpacked root directory. The directory MUST preserve the package layout and contain `main.pskill.html` at its root. This form exists so that individual PSkill files can be version-controlled alongside the engineering project; the runtime MUST validate it as the same package content and MUST NOT require an intermediate 7z archive or unpacking step. A released package MAY still be assembled from that directory into a 7z archive.
 
 # 5. Recommended package layout
 
@@ -388,7 +390,7 @@ PSkill aims to become a distribution form between document, program, workflow, A
 
 # 78. One-sentence definition
 
-> **PSkill is an executable Skill package whose main program logic is structured natural language carried in HTML, distributed in 7z, able to carry versioned tools and resources, and strictly interpreted by AI.**
+> **PSkill is an executable Skill package whose main program logic is structured natural language carried in HTML, distributed as a 7z archive or, during active development, as a version-controlled directory, able to carry versioned tools and resources, and strictly interpreted by AI.**
 
 **PSkill Whitepaper 0.3.0-draft**  
 **Status: Draft / Request for Comment**
